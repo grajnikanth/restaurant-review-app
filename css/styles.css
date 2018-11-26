@@ -1,0 +1,491 @@
+@charset "utf-8";
+/* CSS Document */
+
+body,td,th,p{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color: #333;
+	line-height: 1.5;
+}
+body {
+	background-color: #fdfdfd;
+	margin: 0;
+	position:relative;
+	/*added max-width, margin-left and margin-right as a design choice to limit the display to 1100px max*/
+	/*The marging left and margin-right were made auto center the webpage.*/
+	max-width: 1100px;
+	margin-left: auto;
+	margin-right: auto;
+}
+ul, li {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color: #333;
+}
+a {
+	color: orange;
+	text-decoration: none;
+}
+a:hover, a:focus {
+	color: #3397db;
+	text-decoration: none;
+}
+a img{
+	border: none 0px #fff;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0 0 20px;
+}
+article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+#maincontent {
+  background-color: #f3f3f3;
+  min-height: 100%;
+	/*added display and flex-direction for stacking all items vertically.*/
+	display: flex;
+	flex-direction: column;
+}
+#footer {
+  /*background-color: #444;
+  color: #aaa;*/
+	/*color and background color updated to meet ADT contrast colors
+	recommended by chrome dev tools*/
+	color: rgb(177, 177, 177);
+	background: rgb(68, 68, 68);
+	opacity: 1;
+  font-size: 8pt;
+  letter-spacing: 1px;
+  padding: 25px;
+  text-align: center;
+  text-transform: uppercase;
+}
+/* ====================== Navigation ====================== */
+nav {
+  width: 100%;
+  height: 80px;
+  background-color: #252831;
+  text-align:center;
+}
+
+/*For responsive design at less than 520px width of screen increase nav height
+so that the text does not overflow the nav background color*/
+
+@media screen and (min-width: 1px) and (max-width: 520px) {
+	nav {
+		height: 100px;
+	}
+}
+
+
+nav h1 {
+  margin: auto;
+	/*Added padding to center the header text inside the 80px high nav*/
+	padding: 20px 25px;
+}
+/*Added section h3 styling to provide better accessibility with a header h3  added
+to the restaurant list*/
+nav h1 a, section h3 {
+  color: #fff;
+	/*Increased find size of h1 text to standout more inside the nav at top*/
+  font-size: 18pt;
+  font-weight: 200;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+}
+
+#breadcrumb {
+    padding: 10px 40px 16px;
+    list-style: none;
+    background-color: #eee;
+    font-size: 17px;
+    margin: 0;
+    width: calc(50% - 80px);
+}
+
+/* Display list items side by side */
+#breadcrumb li {
+    display: inline;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+#breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+
+/* Add a color to all links inside the list */
+#breadcrumb li a {
+    /*color: #0275d8;*/
+    text-decoration: none;
+		/*changed color of text to provide appropriate contrast for text. The color was based
+		on recommendation provided by the chrome developer tools*/
+		color: rgb(0, 80, 150);
+		/*background: rgb(238, 238, 238); */
+		opacity: 1;
+}
+
+/* Add a color on mouse-over */
+#breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
+/* ====================== Map ====================== */
+#map {
+  height: 400px;
+  width: 100%;
+  background-color: #ccc;
+}
+/* ====================== Restaurant Filtering ====================== */
+.filter-options {
+  width: 100%;
+	/*changed height from 50px to 100% to fix overlap issues*/
+	height: 100%;
+  /*background-color: #3397DB;*/
+	/*color and background color updated to meet ADT contrast colors
+	recommended by chrome dev tools*/
+	background-color: rgb(0, 93, 141);
+  align-items: center;
+	/*Added padding top and bottom of 10px to make the text more readable*/
+	padding: 10px 0;
+}
+.filter-options h2 {
+  color: white;
+  font-size: 1.7rem;
+  font-weight: normal;
+  line-height: 1;
+  /*margin: 0 20px;*/
+	/*added below two styling to place the text more cetered in this <section>*/
+	margin-bottom: 5px;
+	text-align:center;
+}
+.filter-options select {
+  background-color: white;
+  border: 1px solid #fff;
+  font-family: Arial,sans-serif;
+	font-size: 11pt;
+  height: 35px;
+  letter-spacing: 0;
+  margin: 10px;
+  padding: 0 10px;
+	/*changed width from 200px to 170px*/
+  width: 170px;
+}
+
+/*The current focus is not showing up very well on the screen for drop-down menu. Added
+the below styling to make the focus standout better in the background color*/
+.filter-options select:focus {
+	background: #E91E63;
+	color: #FFFFFF;
+	text-decoration: underline;
+	outline: 0;
+	box-shadow: 0 0 8px 3px rgba(255, 255, 255, 0.8);
+}
+
+.drop-down {
+	diplay: flex;
+	width: 50%;
+}
+
+/* ====================== Restaurant Listing ====================== */
+#restaurants-list {
+  background-color: #f3f3f3;
+  list-style: outside none none;
+  margin: 0;
+  padding: 0px 15px 60px;
+  text-align: center;
+	/*Add display, flex-direction and align-items styling below*/
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+/*Added the "section h3" styling to make the text consistent with the list item text*/
+section h3 {
+	letter-spacing: 0px;
+	background-color: #f4f4f4;
+  text-align: center;
+  /*color: #f7983a;*/
+	/*color and background color updated to meet ADT contrast colors
+	recommended by chrome dev tools*/
+	color: rgb(123, 70, 0);
+	opacity: 1;
+  padding: 20px 0px 0px 0px;
+  margin: 0px;
+}
+
+#restaurants-list li {
+  background-color: #fff;
+  border: 2px solid #ccc;
+  font-family: Arial,sans-serif;
+  margin: 15px;
+  min-height: 380px;
+  padding: 0 30px 25px;
+  text-align: left;
+	/*default width applicable to screen width > 1100px was changed to 260 px to fit
+	three restaurants in a row.*/
+  width: 260px;
+	/*max-width: 300px;*/
+}
+
+/*For responsive layout of restaurants when 750px<width<1100 px set width to 35%
+so that two restaurants are displayed on the screen*/
+@media screen and (min-width: 750px) and (max-width: 1100px) {
+  #restaurants-list li {
+    width: 35%;
+  }
+}
+
+/*For responsive layout of restaurants when 750px<width<1100 px set width to 80%
+so that only one restaurant is displayed on the screen*/
+@media screen and (min-width: 1px) and (max-width: 750px) {
+  #restaurants-list li {
+    width: 80%;
+  }
+}
+
+#restaurants-list .restaurant-img {
+  background-color: #ccc;
+  display: block;
+  margin: 0;
+  width: 100%;
+  /*min-height: 248px;*/
+  /*min-width: 100%;*/
+}
+
+/*#restaurants-list li h1 {
+  color: #f18200;
+  font-family: Arial,sans-serif;
+  font-size: 14pt;
+  font-weight: 200;
+  letter-spacing: 0;
+  line-height: 1.3;
+  margin: 20px 0 10px;
+  text-transform: uppercase;
+}*/
+
+/*below styling replaces the original styling using better specificity for
+p.restaurant-name. The original styling was using h1 tags as shown above which
+has been commented out.*/
+#restaurants-list li p.restaurant-name {
+  /*color: #f18200;*/
+	/*color and background color updated to meet ADT contrast colors
+	recommended by chrome dev tools*/
+	color: rgb(181, 96, 0);
+	opacity: 1;
+  font-family: Arial,sans-serif;
+  font-size: 14pt;
+  font-weight: 200;
+  letter-spacing: 0;
+  line-height: 1.3;
+  margin: 20px 0 10px;
+  text-transform: uppercase;
+}
+
+
+#restaurants-list p {
+  margin: 0;
+  font-size: 11pt;
+}
+
+
+#restaurants-list li a {
+  /*background-color: orange;*/
+  border-bottom: 3px solid #eee;
+  /*color: #fff;*/
+	/*color and background color updated to meet ADT contrast colors
+	recommended by chrome dev tools*/
+	color: rgb(255, 255, 255);
+	background: rgb(125, 79, 0);
+	opacity: 1;
+  display: inline-block;
+  font-size: 10pt;
+  margin: 15px 0 0;
+  padding: 8px 30px 10px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* ====================== Restaurant Details ====================== */
+/*.inside {
+	display: flex;
+	flex-direction: column;
+}*/
+
+/*.inside header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}*/
+/*.inside #map-container {
+  background: blue none repeat scroll 0 0;
+  height: 87%;
+  position: fixed;
+  right: 0;
+  top: 80px;
+  width: 50%;
+}*/
+
+.inside #map-container {
+  background: blue none repeat scroll 0 0;
+	height: 500px;
+}
+
+.inside #map {
+  background-color: #ccc;
+  height: 100%;
+  width: 100%;
+}
+.inside #footer {
+  bottom: 0;
+  position: absolute;
+  width: 50%;
+}
+
+#restaurant-name {
+  color: #f18200;
+  font-family: Arial,sans-serif;
+  font-size: 40pt;
+  font-weight: 200;
+  letter-spacing: 0;
+  margin: 15px 0 30px;
+  text-transform: uppercase;
+  line-height: 1.1;
+	text-align: center;
+}
+#restaurant-img {
+	width: 90%;
+}
+#restaurant-address {
+  font-size: 12pt;
+  margin: 10px 0px;
+}
+#restaurant-cuisine {
+  background-color: #333;
+  color: #ddd;
+  font-size: 12pt;
+  font-weight: 300;
+  letter-spacing: 10px;
+  margin: 0 0 20px;
+  padding: 2px 0;
+  text-align: center;
+  text-transform: uppercase;
+	width: 90%;
+}
+#restaurant-container, #reviews-container {
+  border-bottom: 1px solid #d9d9d9;
+  border-top: 1px solid #fff;
+  padding: 140px 40px 30px;
+  width: 100%;
+}
+
+#restaurant-container {
+	padding: 40px 40px 30px;
+}
+
+#reviews-container {
+  padding: 30px 40px 80px;
+}
+
+#reviews-container h3 {
+  /*color: #f58500;*/
+	/*changed color to obtain better contrast ratio as receommended by dev tools*/
+	color: rgb(128, 67, 0);
+	opacity: 1;
+  font-size: 24pt;
+  font-weight: 300;
+  letter-spacing: -1px;
+  padding-bottom: 1pt;
+	text-align: left;
+}
+#reviews-list {
+  margin: 0;
+  padding: 0;
+}
+#reviews-list li {
+  background-color: #fff;
+    border: 2px solid #f3f3f3;
+  display: block;
+  list-style-type: none;
+  margin: 0 0 30px;
+  overflow: hidden;
+  padding: 0 20px 20px;
+  position: relative;
+  width: 85%;
+}
+
+/*changed margin-right to 10px to provide responsive design. Without this
+margin the text in the right hand side was getting cut-off*/
+
+#reviews-list li p {
+  margin: 0 10px 10px 0;
+}
+#restaurant-hours td {
+  color: #666;
+}
+
+/*styling I added for this project*/
+/*.neighborhood, .cuisine {
+	font-size: 13pt;
+	color: #fdfdfd;
+	padding: 15px 0 15px 15px;
+}*/
+
+.neighborhood, .cuisine {
+  color: #fdfdfd;
+  font-family: Arial,sans-serif;
+	font-size: 13pt;
+  height: 30px;
+  padding-top: 15px;
+	padding-bottom: 10px;
+	/*changed width from 200px to 170px*/
+  width: 190px;
+	float: right;
+	text-align: right;
+}
+
+.drop-down-menus {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: center;
+}
+
+
+
+
+/*Below styling will display the two filter drop down menus in two rows so that the
+title of the drop down menus shows up in one line*/
+@media screen and (min-width: 1px) and (max-width: 760px) {
+
+	.drop-down-menus {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.text-1, .text-2 {
+		width: 50%;
+	}
+
+	.menu-1, .menu-2 {
+		width: 50%;
+	}
+}
+
+
+/*increased font-size to 14pt as 10pt was looking too small*/
+td {
+	font-size: 14pt;
+}
+
+@media screen and (min-width: 1px) and (max-width: 500px) {
+	td {
+		font-size: 10pt;
+	}
+}
