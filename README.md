@@ -18,7 +18,11 @@ I converted a site that looks like this:
 ![](img/mobile_page.png)
 ![](img/mobile_page2.png)
 
+## Make the site accessible
+Web accessibility was implemented. All alt attributes were added and descriptions for images were added. Added screen-reader-only attributes when appropriate to add useful supplementary text. Used semantic markup where possible, and aria attributes when semantic markup is not feasible.
 
+## Cache the static site for offline use. 
+Using Cache API and a ServiceWorker, cached the data for the website so that any page (including images) that has been visited is accessible offline.
 
 ### How I do did finished the Project from here?
 
