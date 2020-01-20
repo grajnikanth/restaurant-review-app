@@ -16,6 +16,8 @@ I converted a site that looks like this:
 ...into a site that looks like this:
 
 ![](img/mobile_page.png)
+![](img/mobile_page2.png)
+
 
 
 ### How I do did finished the Project from here?
