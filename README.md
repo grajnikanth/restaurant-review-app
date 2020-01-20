@@ -1,14 +1,22 @@
-# Udacity Front End Web Developer - Nano Degree - Project 5
----
-#### _Three Stage Course Material Project - Restaurant Reviews_
+# Restaurant Reviews App
 
 ## Project Overview: Stage 1
 
-For the **Restaurant Reviews** projects, I incrementally converted a static webpage to a mobile-ready web application. In **Stage One**, I took a static design that lacks accessibility and converted the design to be responsive on different sized displays and accessible for screen reader use. I also added a service worker to begin the process of creating a seamless offline experience for your users.
+This project was developed as part of the Udacity Front End Web Developer Nanodegree. For the **Restaurant Reviews App** projects, I converted a static webpage to a mobile-ready web application. In **Stage One**, I took a static design that lacks accessibility and converted the design to be responsive on different sized displays and accessible for screen reader use. I also added a service worker to begin the process of creating a seamless offline experience for users.
 
-### Specification
+Starter code was provided by Udacity for a restaurant reviews website. The code had a lot of issues. It’s barely usable on a desktop browser, much less a mobile device. It also doesn’t include any standard accessibility features, and it doesn’t work offline at all. I updated the code to resolve these issues while still maintaining the included functionality.
 
-I was provided with the code for a restaurant reviews website. The code has a lot of issues. It’s barely usable on a desktop browser, much less a mobile device. It also doesn’t include any standard accessibility features, and it doesn’t work offline at all. My job was to update the code to resolve these issues while still maintaining the included functionality. 
+## Requirements Implemented
+Made the provided site fully responsive. All of the page elements were updated to be usable and visible in any viewport, including desktop, tablet, and mobile displays. Images were organized so that they do not overlap, and page elements wrap when the viewport is too small to display them side by side.
+
+I converted a site that looks like this:
+
+![](img/starter_page.png)
+
+...into a site that looks like this:
+
+![](img/mobile_page.png)
+
 
 ### How I do did finished the Project from here?
 
