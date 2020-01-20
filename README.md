@@ -1,8 +1,8 @@
 # Restaurant Reviews App
 
-## Project Overview: Stage 1
+## Project Overview:
 
-This project was developed as part of the Udacity Front End Web Developer Nanodegree. For the **Restaurant Reviews App** projects, I converted a static webpage to a mobile-ready web application. In **Stage One**, I took a static design that lacks accessibility and converted the design to be responsive on different sized displays and accessible for screen reader use. I also added a service worker to begin the process of creating a seamless offline experience for users.
+This project was developed as part of the Udacity Front End Web Developer Nanodegree. For the **Restaurant Reviews App** projects, I converted a static webpage to a mobile-ready web application. I took a static design that lacks accessibility and converted the design to be responsive on different sized displays and accessible for screen reader use. I also added a service worker to begin the process of creating a seamless offline experience for users.
 
 Starter code was provided by Udacity for a restaurant reviews website. The code had a lot of issues. It’s barely usable on a desktop browser, much less a mobile device. It also doesn’t include any standard accessibility features, and it doesn’t work offline at all. I updated the code to resolve these issues while still maintaining the included functionality.
 
