@@ -18,27 +18,23 @@ I converted a site that looks like this:
 ![](img/mobile_page.png)
 ![](img/mobile_page2.png)
 
-## Make the site accessible
+## Made the site accessible
 Web accessibility was implemented. All alt attributes were added and descriptions for images were added. Added screen-reader-only attributes when appropriate to add useful supplementary text. Used semantic markup where possible, and aria attributes when semantic markup is not feasible.
 
 ## Cache the static site for offline use. 
 Using Cache API and a ServiceWorker, cached the data for the website so that any page (including images) that has been visited is accessible offline.
 
-### How I do did finished the Project from here?
+## Steps to run the code
 
-1. In this folder, I started a simple HTTP server to serve up the site files on my local computer. Python has some simple tools to do this, and you don't even need to know Python. For most people, it's already installed on your computer. 
+1. In the main folder, start a simple HTTP server to serve up the site files on your local computer. In a terminal, check the version of Python you have: `python -V`. If you have Python 2.x, spin up the server with `python -m SimpleHTTPServer 8000` (or some other port, if port 8000 is already in use.) For Python 3.x, you can use `python3 -m http.server 8000`. If you don't have Python installed, navigate to Python's [website](https://www.python.org/) to download and install the software.
 
-In a terminal, check the version of Python you have: `python -V`. If you have Python 2.x, spin up the server with `python -m SimpleHTTPServer 8000` (or some other port, if port 8000 is already in use.) For Python 3.x, you can use `python3 -m http.server 8000`. If you don't have Python installed, navigate to Python's [website](https://www.python.org/) to download and install the software.
-
-2. With your server running, visit the site: `http://localhost:8000`, and look around for a bit to see what the current experience looks like.
-3. Explore the provided code, and start making a plan to implement the required features in three areas: responsive design, accessibility and offline use.
-4. Write code to implement the updates to get this site on its way to being a mobile-ready website.
+2. With your server running, visit the site: `http://localhost:8000`
 
 ## Leaflet.js and Mapbox:
 
 This repository uses [leafletjs](https://leafletjs.com/) with [Mapbox](https://www.mapbox.com/). You need to replace `<your MAPBOX API KEY HERE>` with a token from [Mapbox](https://www.mapbox.com/). Mapbox is free to use, and does not require any payment information. 
 
-### Note about ES6
+## Note about ES6
 
 Most of the code in this project has been written to the ES6 JavaScript specification for compatibility with modern web browsers and future proofing JavaScript code. As much as possible, try to maintain use of ES6 in any additional JavaScript you write. 
 
